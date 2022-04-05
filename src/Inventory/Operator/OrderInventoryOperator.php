@@ -9,12 +9,8 @@ use Sylius\Component\Core\Model\OrderInterface;
 
 class OrderInventoryOperator implements OrderInventoryOperatorInterface
 {
-    /** @var OrderInventoryOperatorInterface */
-    private $decoratedOperator;
-    /**
-     * @var StockMovementPersisterInterface
-     */
-    private $stockMovementPersister;
+    private OrderInventoryOperatorInterface $decoratedOperator;
+    private StockMovementPersisterInterface $stockMovementPersister;
 
 
     public function __construct(

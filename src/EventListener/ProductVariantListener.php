@@ -9,11 +9,7 @@ use Sylius\Component\Core\Model\ProductVariantInterface;
 
 class ProductVariantListener
 {
-
-    /**
-     * @var StockMovementPersisterInterface
-     */
-    private $stockMovementPersister;
+    private StockMovementPersisterInterface $stockMovementPersister;
 
     public function __construct(StockMovementPersisterInterface $stockMovementPersister)
     {

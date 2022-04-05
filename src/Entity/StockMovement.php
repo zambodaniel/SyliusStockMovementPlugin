@@ -14,29 +14,21 @@ class StockMovement  implements ResourceInterface, StockMovementInterface
     public const ORIGIN_MANUAL = "manual";
     public const ORIGIN_ORDER = "order";
 
-    /** @var int */
-    private $id;
+    private ?int $id = null;
 
-    /** @var \DateTime */
-    private $createdAt;
+    private ?\DateTime $createdAt = null;
 
-    /** @var int */
-    private $quantity;
+    private ?int $quantity = null;
 
-    /** @var int */
-    private $movement;
+    private ?int $movement = null;
 
-    /** @var string */
-    private $origin;
+    private ?string $origin = null;
 
-    /** @var ?OrderInterface */
-    private $order;
+    private ?\Sylius\Component\Order\Model\OrderInterface $order = null;
 
-    /** @var ?\Symfony\Component\Security\Core\User\UserInterface */
-    private $adminUser;
+    private ?\Symfony\Component\Security\Core\User\UserInterface $adminUser = null;
 
-    /** @var ProductVariantInterface */
-    private $productVariant;
+    private ?\Sylius\Component\Core\Model\ProductVariantInterface $productVariant = null;
 
     /**
      * @return int

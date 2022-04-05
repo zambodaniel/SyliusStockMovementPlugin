@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Aropixel\SyliusStockMovementPlugin\Twig;
 
 use Aropixel\SyliusStockMovementPlugin\Repository\StockMovementRepositoryInterface;
@@ -8,14 +7,9 @@ use Sylius\Component\Core\Model\ProductVariant;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-
 class StockMovementExtension extends AbstractExtension
 {
-
-    /**
-     * @var StockMovementRepositoryInterface
-     */
-    private $stockMovementRepository;
+    private StockMovementRepositoryInterface $stockMovementRepository;
 
     public function __construct(StockMovementRepositoryInterface $stockMovementRepository)
     {
@@ -31,7 +25,7 @@ class StockMovementExtension extends AbstractExtension
 
     public function getStockMovements(ProductVariant $productVariant): array
     {
-        return $this->stockMovementRepository->findBy(['productVariant' => $productVariant]);
+        return $this->stockMovementRepository->findBy(['productVariant' => $productVariant], ['createdAt' => 'DESC']);
     }
 
 }

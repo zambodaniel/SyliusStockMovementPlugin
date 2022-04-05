@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Aropixel\SyliusStockMovementPlugin\Factory;
-
 
 use Aropixel\SyliusStockMovementPlugin\Entity\StockMovement;
 use Aropixel\SyliusStockMovementPlugin\Entity\StockMovementInterface;
@@ -12,10 +10,7 @@ use Symfony\Component\Security\Core\Security;
 
 class StockMovementFactory implements StockMovementFactoryInterface
 {
-    /**
-     * @var Security
-     */
-    private $security;
+    private Security $security;
 
     public function __construct(
         Security $security

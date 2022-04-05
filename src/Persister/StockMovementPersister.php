@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Aropixel\SyliusStockMovementPlugin\Persister;
 
 use Aropixel\SyliusStockMovementPlugin\Factory\StockMovementFactoryInterface;
@@ -10,14 +9,8 @@ use Sylius\Component\Core\Model\ProductVariantInterface;
 
 class StockMovementPersister implements StockMovementPersisterInterface
 {
-    /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
-    /**
-     * @var StockMovementFactoryInterface
-     */
-    private $stockMovementFactory;
+    private EntityManagerInterface $entityManager;
+    private StockMovementFactoryInterface $stockMovementFactory;
 
     public function __construct(
         EntityManagerInterface $entityManager,

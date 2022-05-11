@@ -21,6 +21,8 @@ class ProductListener
         $product = $event->getSubject();
         $productVariant = $product->getVariants()->first();
 
-        $this->stockMovementPersister->persistManualStockMovement($productVariant);
+        if ($productVariant) {
+            $this->stockMovementPersister->persistManualStockMovement($productVariant);
+        }
     }
 }

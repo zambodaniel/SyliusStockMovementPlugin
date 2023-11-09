@@ -8,9 +8,7 @@ trait ProductVariantMovementTrait
 
     private $oldOnHand;
 
-    /**
-     * @return mixed
-     */
+
     public function getOldOnHand(): ?int
     {
         return $this->oldOnHand;

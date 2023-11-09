@@ -5,6 +5,10 @@
 
     <mapped-superclass name="Aropixel\SyliusStockMovementPlugin\Entity\StockMovement" table="aropixel_stock_movement">
 
+        <indexes>
+            <index name="variant_idx" columns="product_variant_id,created_at"/>
+        </indexes>
+
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>

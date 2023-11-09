@@ -26,7 +26,7 @@ class StockMovementFactory implements StockMovementFactoryInterface
         $stockMovement->setProductVariant($productVariant);
         $stockMovement->setQuantity((int)$productVariant->getOnHand());
         $stockMovement->setMovement($productVariant->getStockMovement());
-        $stockMovement->setOrigin(StockMovement::ORIGIN_MANUAL);
+        $stockMovement->setOrigin(StockMovementInterface::ORIGIN_MANUAL);
         $stockMovement->setAdminUser($adminUser);
 
         return $stockMovement;
@@ -38,7 +38,7 @@ class StockMovementFactory implements StockMovementFactoryInterface
         $stockMovement->setProductVariant($productVariant);
         $stockMovement->setQuantity($productVariant->getOnHand());
         $stockMovement->setMovement($productVariant->getStockMovement());
-        $stockMovement->setOrigin(StockMovement::ORIGIN_ORDER);
+        $stockMovement->setOrigin(StockMovementInterface::ORIGIN_ORDER);
         $stockMovement->setOrder($order);
 
         return $stockMovement;

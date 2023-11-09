@@ -16,7 +16,7 @@ class StockMovementExtension extends AbstractExtension
         $this->stockMovementRepository = $stockMovementRepository;
     }
 
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('getStockMovements', [$this, 'getStockMovements']),

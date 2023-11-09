@@ -4,19 +4,16 @@
 namespace Aropixel\SyliusStockMovementPlugin\Entity;
 
 
-use Sylius\Component\Core\Model\UserInterface;
+use Sylius\Component\Core\Model\AdminUserInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
 use Sylius\Component\Order\Model\OrderInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 
 class StockMovement  implements ResourceInterface, StockMovementInterface
 {
-    public const ORIGIN_MANUAL = "manual";
-    public const ORIGIN_ORDER = "order";
-
     private ?int $id = null;
 
-    private ?\DateTime $createdAt = null;
+    private ?\DateTimeInterface $createdAt = null;
 
     private ?int $quantity = null;
 
@@ -24,11 +21,11 @@ class StockMovement  implements ResourceInterface, StockMovementInterface
 
     private ?string $origin = null;
 
-    private ?\Sylius\Component\Order\Model\OrderInterface $order = null;
+    private ?OrderInterface $order = null;
 
-    private ?\Symfony\Component\Security\Core\User\UserInterface $adminUser = null;
+    private ?AdminUserInterface $adminUser = null;
 
-    private ?\Sylius\Component\Core\Model\ProductVariantInterface $productVariant = null;
+    private ?ProductVariantInterface $productVariant = null;
 
     /**
      * @return int
@@ -47,17 +44,17 @@ class StockMovement  implements ResourceInterface, StockMovementInterface
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getCreatedAt(): \DateTime
+    public function getCreatedAt(): \DateTimeInterface
     {
         return $this->createdAt;
     }
 
     /**
-     * @param \DateTime $createdAt
+     * @param \DateTimeInterface $createdAt
      */
-    public function setCreatedAt(\DateTime $createdAt): void
+    public function setCreatedAt(\DateTimeInterface $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
@@ -111,17 +108,17 @@ class StockMovement  implements ResourceInterface, StockMovementInterface
     }
 
     /**
-     * @return \Symfony\Component\Security\Core\User\UserInterface|null
+     * @return AdminUserInterface|null
      */
-    public function getAdminUser(): ?\Symfony\Component\Security\Core\User\UserInterface
+    public function getAdminUser(): ?AdminUserInterface
     {
         return $this->adminUser;
     }
 
     /**
-     * @param \Symfony\Component\Security\Core\User\UserInterface|null $adminUser
+     * @param AdminUserInterface|null $adminUser
      */
-    public function setAdminUser(?\Symfony\Component\Security\Core\User\UserInterface $adminUser): void
+    public function setAdminUser(?AdminUserInterface $adminUser): void
     {
         $this->adminUser = $adminUser;
     }

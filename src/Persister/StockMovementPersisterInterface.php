@@ -11,5 +11,5 @@ interface StockMovementPersisterInterface
 {
     public function persistManualStockMovement(ProductVariantInterface $productVariant): void;
 
-    public function persistOrderStockMovements(OrderInterface $payment): void;
+    public function persistOrderStockMovements(OrderInterface $order): void;
 }
